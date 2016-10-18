@@ -1,7 +1,8 @@
-Feature: Your appium training
+Feature: Log in feature of app to test
+  whether the app allows to log in or not
 
-  Scenario: User should able to login to app
-    Given When I am on login page
+  Scenario: Valid Log in -1
+    Given Given I am on the Go-Jek app log in page
     When User enters email "akshay.shinde@go-jek.com" and password as "leftshift@1234"
     Then Verify GoPay Amount
 

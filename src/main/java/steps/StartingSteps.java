@@ -5,6 +5,7 @@ import cucumber.api.java.Before;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -14,19 +15,23 @@ import java.net.URL;
 public class StartingSteps extends BaseStep {
 
     @Before
-    public void setUp() throws MalformedURLException {
+    public void initializeAppiumSession() throws MalformedURLException {
+        File appDir = new File("app");
+        File app = new File(appDir, "app-staging-release.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("appium-version", "1.0");
+
+        //mandatory capabilities
+        capabilities.setCapability("deviceName", "Android");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "5.0");
-        capabilities.setCapability("deviceName", "device");
-        capabilities.setCapability("app", "/Users/Leftshift/Downloads/gojek-staging-release-a63ef96.apk");
-        BaseStep.wd = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+
+        //other caps
+        capabilities.setCapability("app", app.getAbsolutePath());
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
     @After
-    public void tearDown() {
-        BaseStep.wd.quit();
+    public void killsession()
+    {
+        driver.quit();
     }
-
 }
