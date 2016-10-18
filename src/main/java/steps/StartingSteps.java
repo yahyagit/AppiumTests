@@ -17,7 +17,7 @@ public class StartingSteps extends BaseStep {
     @Before
     public void initializeAppiumSession() throws MalformedURLException {
         File appDir = new File("app");
-        File app = new File(appDir, "app-staging-release.apk");
+        File app = new File(appDir, "demo.apk");
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         //mandatory capabilities

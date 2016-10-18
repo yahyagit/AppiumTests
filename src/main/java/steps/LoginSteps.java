@@ -16,8 +16,6 @@ public class LoginSteps extends BaseStep {
 
     @Given("^Given I am on the Go-Jek app log in page$")
     public void givenIAmOnTheGoJekAppLogInPage() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
     }
 
     @When("^User enters email \"([^\"]*)\" and password as \"([^\"]*)\"$")
