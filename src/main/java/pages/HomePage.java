@@ -18,6 +18,8 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "text_gopay_balance")
     private WebElement goPayBalance;
+    @FindBy(xpath = "//android.widget.TextView[@text='GO-RIDE']")
+    private WebElement goRideButton;
 
 
     public HomePage(AndroidDriver driver) throws MalformedURLException {
@@ -29,4 +31,8 @@ public class HomePage extends BasePage {
         Assert.assertTrue(!goPayBalance.getText().isEmpty());
     }
 
+    public void tapsOnGoRide() {
+        waitForElement(goRideButton);
+        goRideButton.click();
+    }
 }

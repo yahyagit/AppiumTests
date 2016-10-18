@@ -29,4 +29,5 @@ public class BasePage {
     public void waitForElement(WebElement webElement) {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
+
 }

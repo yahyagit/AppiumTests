@@ -12,6 +12,5 @@ Feature: Log in feature of app to test
     And User taps on Go-Ride
     When User selects Source location as "Indomaret"
     And User selects Destination location as "Monumen Nasional"
-    Then User sees payment option
-    And User selects Payment Method as "cash" and books a Ride
+    And User selects Payment Method as cash and books a Ride
     Then User sees finding driver page
